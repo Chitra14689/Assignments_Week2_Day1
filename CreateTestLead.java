@@ -137,9 +137,7 @@ public class CreateTestLead {
 		
 		driver.findElement(By.id("createLeadForm_generalPostalCodeExt"));
 		driver.findElement(By.id("createLeadForm_generalPostalCodeExt")).sendKeys("5461");
-		
-		driver.findElement(By.id("createLeadForm_firstName"));
-		driver.findElement(By.id("createLeadForm_firstName")).getAttribute(null);
+	
 		
 		driver.findElement(By.className("smallSubmit"));
 		driver.findElement(By.className("smallSubmit")).click();
@@ -147,12 +145,17 @@ public class CreateTestLead {
 		String title = driver.getTitle();
 		System.out.println(title);
 		
+		//Step 7: Verify if the expected page is opened
 		
+		if (title.equals("View Lead | opentaps CRM")) {
+			
+			System.out.println("Page matches. Expected window opened.");
+		}
 		
+		else {
+			System.out.println("Page does not match.Not the expected window");
+		}
 		
-		
-		
-
 	}
 
 }
